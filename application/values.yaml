@@ -42,9 +42,9 @@ service:
 
 ingress:
   enabled: true
-  className: "wordpress"
+  className: "nginx"
   annotations: 
-    wordpress.ingress.kubernetes.io/proxy-body-size: "0"
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
     ingress.kubernetes.io/ssl-redirect: "false"
     cert-manager.io/cluster-issuer: letsencrypt-prod
     acme.cert-manager.io/http01-edit-in-place: "true"
@@ -57,6 +57,12 @@ ingress:
     - secretName: argocd-wordpress-tls
       hosts:
         - argocd-wordpress.shuktech.com
+
+
+
+
+
+
 
 resources: 
   # We usually recommend not to specify default resources and to leave this as a conscious
